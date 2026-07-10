@@ -1,0 +1,22 @@
+Textspur — Lizenzbedingungen (Freeware)
+
+Copyright (c) 2026 David Bachmann
+
+1. Textspur darf kostenlos für private und geschäftliche Zwecke genutzt
+   werden.
+
+2. Die unveränderte Installationsdatei darf unentgeltlich weitergegeben
+   werden. Nicht gestattet sind: Verkauf, Bündelung mit kostenpflichtigen
+   Angeboten sowie Veränderung, Dekompilierung oder Reverse Engineering der
+   Software, soweit gesetzlich nicht ausdrücklich erlaubt (§ 69d, § 69e UrhG
+   bleiben unberührt).
+
+3. DIE SOFTWARE WIRD OHNE JEDE GEWÄHRLEISTUNG BEREITGESTELLT ("AS IS").
+   Die Haftung ist auf Vorsatz und grobe Fahrlässigkeit beschränkt; bei
+   einfacher Fahrlässigkeit wird nur für die Verletzung wesentlicher
+   Vertragspflichten und begrenzt auf den vorhersehbaren, typischen Schaden
+   gehaftet. Die Haftung für Schäden aus der Verletzung von Leben, Körper
+   oder Gesundheit bleibt unberührt.
+
+4. Alle Rechte, die nicht ausdrücklich eingeräumt werden, verbleiben beim
+   Urheber.
