@@ -1,6 +1,6 @@
 # Textspur
 
-Textspur transkribiert Audio- und Video-Dateien zu Text — komplett lokal auf dem eigenen Rechner mit [WhisperX](https://github.com/m-bain/whisperX), ohne Cloud und ohne Konto. Auf Wunsch mit Sprecher-Erkennung (Diarisierung) und nachgelagerter Übersetzung. Export als TXT, SRT und JSON.
+Textspur transkribiert Audio- und Video-Dateien zu Text — komplett lokal auf dem eigenen Rechner mit [WhisperX](https://github.com/m-bain/whisperX), ohne Cloud und ohne Konto. Auf Wunsch mit Sprecher-Erkennung (Diarisierung), nachgelagerter Übersetzung und Erfassung präsentierter Bildschirm-Inhalte (Folien) aus Videos. Export als TXT, SRT, JSON und HTML.
 
 Textspur ist ein Werkzeug von [David Bachmann](https://david-bachmann.de).
 
@@ -16,12 +16,13 @@ certutil -hashfile Textspur-<Version>-Setup.exe SHA256
 
 ## Voraussetzungen
 
-Textspur startet externe Werkzeuge, die separat installiert sein müssen:
+Textspur startet externe Werkzeuge:
 
-- **Python ≥ 3.12** mit installiertem [`whisperx`](https://github.com/m-bain/whisperX) (inklusive `torch`/`torchaudio`)
-- **`ffmpeg`** im `PATH` (empfohlen inklusive `ffprobe` und `ffplay`); alternativ lassen sich volle Pfade in den App-Einstellungen hinterlegen
+- **WhisperX (Python)** — muss nicht mehr selbst installiert werden: Textspur richtet beim ersten Lauf auf Nachfrage eine eigene Umgebung ein (Python 3.12 + `whisperx` unter `%LocalAppData%\Textspuruntime`, einmaliger Download unter 1 GB). Eine vorhandene Installation lässt sich weiterhin über den Python-Pfad in den Einstellungen nutzen.
+- **`ffmpeg`** (mit `ffprobe` und `ffplay`) — der Installer bietet an, es über `winget` mitzuinstallieren; alternativ im `PATH` bereitstellen oder volle Pfade in den App-Einstellungen hinterlegen
 - **Optional** für die Sprecher-Erkennung: ein [Hugging-Face-Token](https://huggingface.co/pyannote/speaker-diarization-community-1) mit Zugriff auf das pyannote-Modell
 - **Optional** für die Übersetzung: ein OpenAI-kompatibler Chat-Completions-Endpoint samt API-Key
+- **Optional** für durchsuchbaren Text auf erfassten Folien: [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki) (`winget install UB-Mannheim.TesseractOCR`); ohne Tesseract entstehen die Screenshots trotzdem
 
 ## Fehler und Wünsche
 
