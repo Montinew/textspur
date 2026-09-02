@@ -18,7 +18,7 @@ certutil -hashfile Textspur-<Version>-Setup.exe SHA256
 
 Textspur startet externe Werkzeuge:
 
-- **WhisperX (Python)** — muss nicht mehr selbst installiert werden: Textspur richtet beim ersten Lauf auf Nachfrage eine eigene Umgebung ein (Python 3.12 + `whisperx` unter `%LocalAppData%\Textspuruntime`, einmaliger Download unter 1 GB). Eine vorhandene Installation lässt sich weiterhin über den Python-Pfad in den Einstellungen nutzen.
+- **WhisperX (Python)** — muss nicht mehr selbst installiert werden: Textspur richtet beim ersten Lauf auf Nachfrage eine eigene Umgebung ein (Python 3.12 + `whisperx` unter `%LocalAppData%\Textspur\runtime`, einmaliger Download unter 1 GB). Eine vorhandene Installation lässt sich weiterhin über den Python-Pfad in den Einstellungen nutzen.
 - **`ffmpeg`** (mit `ffprobe` und `ffplay`) — der Installer bietet an, es über `winget` mitzuinstallieren; alternativ im `PATH` bereitstellen oder volle Pfade in den App-Einstellungen hinterlegen
 - **Optional** für die Sprecher-Erkennung: ein [Hugging-Face-Token](https://huggingface.co/pyannote/speaker-diarization-community-1) mit Zugriff auf das pyannote-Modell
 - **Optional** für die Übersetzung: ein OpenAI-kompatibler Chat-Completions-Endpoint samt API-Key
