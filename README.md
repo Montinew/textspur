@@ -4,6 +4,18 @@ Textspur transkribiert Audio- und Video-Dateien zu Text — komplett lokal auf d
 
 Textspur ist ein Werkzeug von [David Bachmann](https://david-bachmann.de).
 
+**➜ [Das Handbuch](HANDBUCH.md)** beschreibt Installation, Bedienung und alle Funktionen.
+
+## Was Textspur kann
+
+- **Transkribieren** — Audio und Video zu Text, lokal auf der CPU. Eine Stunde Aufnahme braucht ungefähr eine Stunde.
+- **Sprecher trennen und benennen** — mit Hörproben je Stimme, damit die Zuordnung nicht geraten werden muss.
+- **Untertitel und Dokument** — TXT, SRT, JSON und ein druckbares HTML-Dokument.
+- **Folien aus Videos** — bei Videokonferenzen findet Textspur die gezeigten Bildschirm-Inhalte und sortiert sie zeitlich ins Dokument ein.
+- **Dazulernen** — Fachbegriffe und Abkürzungen, die einmal korrigiert wurden, kennt Textspur beim nächsten Lauf.
+- **Stapelverarbeitung** — beliebig viele Aufnahmen nacheinander; scheitert eine, laufen die übrigen weiter.
+- **Übersetzen** — optional über einen OpenAI-kompatiblen Endpunkt. Der einzige Schritt, bei dem Daten den Rechner verlassen, standardmäßig aus.
+
 ## Download
 
 Die aktuelle Version gibt es unter [Releases](https://github.com/Montinew/textspur/releases/latest) als Windows-Installer (`Textspur-<Version>-Setup.exe`). Der Installer ist self-contained (.NET-Runtime und LibVLC enthalten) und installiert pro Benutzer ohne Admin-Rechte.
@@ -24,9 +36,13 @@ Textspur startet externe Werkzeuge:
 - **Optional** für die Übersetzung: ein OpenAI-kompatibler Chat-Completions-Endpoint samt API-Key
 - **Optional** für durchsuchbaren Text auf erfassten Folien: [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki) (`winget install UB-Mannheim.TesseractOCR`); ohne Tesseract entstehen die Screenshots trotzdem
 
+Beim ersten Lauf lädt Textspur zusätzlich das Sprachmodell herunter, zusammen mit der WhisperX-Umgebung rund zwei Gigabyte. Ab dem zweiten Lauf entfällt das.
+
 ## Fehler und Wünsche
 
-Fehlermeldungen und Feature-Wünsche gerne als [Issue](https://github.com/Montinew/textspur/issues) — bitte mit Textspur-Version, Windows-Version und einer kurzen Beschreibung, was passiert ist.
+Fehlermeldungen und Feature-Wünsche gerne als [Issue](https://github.com/Montinew/textspur/issues) — bitte mit Textspur-Version (steht im Info-Fenster), Windows-Version und einer kurzen Beschreibung, was passiert ist.
+
+Hilfreich ist der Abschnitt aus dem Protokoll unter `%LocalAppData%\Textspur\session.log`. Es enthält keinen Hugging-Face-Token und lässt sich gefahrlos weitergeben.
 
 ## Lizenz und Quellcode
 
