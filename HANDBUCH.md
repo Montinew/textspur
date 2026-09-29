@@ -3,7 +3,7 @@
 Textspur verwandelt Aufzeichnungen in lesbaren Text. Alles läuft auf dem eigenen
 Rechner, ohne Cloud und ohne Konto.
 
-Dieses Handbuch beschreibt Version 1.2.0.
+Dieses Handbuch beschreibt Version 1.2.1.
 
 ---
 
@@ -132,9 +132,10 @@ der Zeile steht alles, was für diese Aufnahme gilt.
 Rechts über der Tabelle sitzt der Schalter **Batch-Modus**.
 
 **Batch ist der Standard und der Normalfall.** Jede Aufnahme wird zu einem
-eigenen Transkript mit eigenem Ordner und eigenem Namen. Fällt eine Datei aus,
-laufen die übrigen weiter; die gescheiterte bleibt rot markiert in der Liste
-stehen.
+eigenen Transkript mit eigenem Ordner und eigenem Namen. Jede fertige Datei wird
+sofort grün hinterlegt und steht im Sprecher-Tab zur Bearbeitung bereit, während
+die übrigen noch laufen. Fällt eine Datei aus, laufen die übrigen weiter; die
+gescheiterte bleibt rot markiert in der Liste stehen.
 
 **Zusammenfassen** ist die Ausnahme. Alle Aufnahmen werden zu **einem**
 Transkript verkettet, sinnvoll etwa bei einer Sitzung, die in mehreren Dateien
@@ -146,7 +147,7 @@ erkennt man, in welchem Modus man ist.
 
 | Spalte | Bedeutung |
 |---|---|
-| Datei | Der Dateiname. Ein rotes Warnzeichen bedeutet, dass diese Datei beim letzten Lauf gescheitert ist; der Tooltip nennt den Grund. |
+| Datei | Der Dateiname. Grün hinterlegt mit Haken: fertig transkribiert und im Sprecher-Tab bearbeitbar. Ein rotes Warnzeichen bedeutet, dass diese Datei beim letzten Lauf gescheitert ist; der Tooltip nennt den Grund. |
 | Export-Name | Der Basisname für Ordner und Dateien. Leer heißt: der Dateiname wird genommen. |
 | Länge, Format, Größe | Aus der Datei ausgelesen. Steht dort „n/a", fehlt ffprobe. |
 | Audio | Nur die Tonspur behalten. **Die einzige Aktion, die etwas löscht.** |
@@ -290,7 +291,10 @@ finden ihre Aufnahme wieder, solange sie im selben Ordner liegt.
 
 Der Knopf **⤴ Re-Export** in der Werkzeugleiste, auch über Strg+S erreichbar,
 schreibt TXT, SRT und HTML neu aus dem aktuellen Stand. Wurde der Export-Name
-geändert, benennt der Re-Export auch die Dateien und den Job-Ordner um.
+geändert, benennt der Re-Export auch die Dateien und den Job-Ordner um. Danach
+steht einige Sekunden lang ein grüner Hinweis mit Uhrzeit, Name und Ordner neben
+dem Knopf. Der Re-Export geht auch während eines Batch-Laufs, für jede Datei, die
+schon fertig ist.
 
 ---
 
@@ -324,7 +328,9 @@ echten Transkript mit 287 Segmenten hat das elf Zuordnungen richtiggestellt.
 
 ### Mehrere Transkripte gleichzeitig
 
-Nach einem Batch-Lauf liegen alle Ergebnisse im Umschalter oben im Sprecher-Tab.
+Im Batch landet jedes Ergebnis im Umschalter oben im Sprecher-Tab, sobald die
+Datei fertig ist, nicht erst am Ende des Laufs. Man kann also die ersten Sprecher
+benennen, während die nächsten Aufnahmen noch transkribiert werden.
 Daneben steht das Feld für den Export-Namen. Das ist der einzige Ort, an dem sich
 der Name eines bereits erzeugten Transkripts ändern lässt.
 
@@ -358,8 +364,18 @@ landen nicht in der Liste, sondern rechts in der Übersicht der verworfenen
 Vorschläge, jeweils mit Begründung. Umgekehrt kommen Abkürzungen, Wörter mit
 Großschreibung im Inneren und alles mit Ziffern immer durch.
 
+**Bekannte Fehlerkennungen werden nach jedem Lauf ersetzt.** Die Liste ist für
+das Modell nur ein Hinweis, keine Garantie: Bei gleich klingenden Namen wie
+„Wibke“ und „Wiebke“ entscheidet es von Lauf zu Lauf anders. Steht bei einem
+Begriff in der Spalte „Erkannt als“ die falsche Schreibweise, ersetzt Textspur sie
+deshalb nach dem Lauf im ganzen Transkript, bevor die Dateien geschrieben werden.
+Ersetzt werden nur ganze Wörter, unabhängig von Groß- und Kleinschreibung; das
+Live-Log nennt jede Ersetzung. Ist die falsche Schreibweise ein Alltagswort oder
+kürzer als drei Buchstaben, ersetzt Textspur sie nicht, weil sonst auch richtige
+Stellen überschrieben würden. Auch das steht im Log.
+
 Jeder Eintrag lässt sich abwählen, dann bleibt er gespeichert, geht aber nicht in
-den Lauf. Oder löschen.
+den Lauf und wird auch nicht ersetzt. Oder löschen.
 
 **Der Platz im Modell ist begrenzt.** Passen nicht alle Begriffe hinein, gehen
 die mit den meisten Treffern zuerst mit. Textspur zählt nach jedem Lauf, welche
